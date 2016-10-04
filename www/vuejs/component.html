@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+</head>
+<body>
+<div id="shop">
+    <h1 v-text="title"></h1>
+    <div v-component="items" v-with="model: fruits"><div>
+</div>
+
+</body>
+
+<script type="text/javascript" charset="UTF-8" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" charset="UTF-8" src="js/vue.min.js"></script>
+<script>
+    Vue.component("items", {
+        template: "#fruits-component"
+    })
+    var fruits = new Vue({
+        el: "#shop",
+        data: {
+            title: "ワイワイショッピング",
+            fruits: {
+                name: "バナナ"
+            }
+        }
+    })
+</script>
+<script type="text/x-template" id="fruits-component">
+    <div>
+        <span v-text="model.name"></span>
+    </div>
+</script>
+</html>

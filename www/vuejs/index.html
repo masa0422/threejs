@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+</head>
+<body>
+<div id="vueadvent" class="container">
+    <data-table></data-table>
+    <button type="button" class="btn btn-default" v-on="click: reflesh" >更新</button>
+</div>
+<div id="example-2">
+    <button v-on:click="say('hi')">Say Hi</button>
+    <button v-on:click="say('what')">Say What</button>
+</div>
+</body>
+
+<!-- component template -->
+<script type="text/x-template" id="data-template">
+    <table class="table">
+        <thead>
+        <tr>
+            <th v-for="key in columns">
+                {{key | capitalize}}
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="entry in data">
+            <td v-for="key in columns">
+                {{entry[key]}}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</script>
+<script type="text/javascript" charset="UTF-8" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" charset="UTF-8" src="js/vue.min.js"></script>
+<script type="text/javascript" charset="UTF-8" src="js/app.js"></script>
+</html>
